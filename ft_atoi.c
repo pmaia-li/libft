@@ -6,7 +6,7 @@
 /*   By: pmaia-li <pmaia-li@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 16:21:53 by pmaia-li          #+#    #+#             */
-/*   Updated: 2022/12/05 09:26:34 by pmaia-li         ###   ########.fr       */
+/*   Updated: 2022/12/05 16:35:05 by pmaia-li         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	ft_atoi(char *str)
 	cont = 0;
 	if (*str == 32 || (*str >= 9 && *str <= 13))
 		str = ft_r_space(str);
-	while (*str == 43 || *str == 45)
+	if (*str == 43 || *str == 45)
 	{
 		if (*str == 45)
 		{
@@ -44,7 +44,7 @@ int	ft_atoi(char *str)
 		a = a * 10 + (*str - 48);
 		str++;
 	}
-	if (cont % 2 != 0)
+	if (cont == 1)
 		a = a * -1;
 	return (a);
 }

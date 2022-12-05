@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmaia-li <pmaia-li@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/05 10:10:05 by pmaia-li          #+#    #+#             */
-/*   Updated: 2022/12/05 16:32:03 by pmaia-li         ###   ########.fr       */
+/*   Created: 2022/12/05 16:38:47 by pmaia-li          #+#    #+#             */
+/*   Updated: 2022/12/05 16:44:14 by pmaia-li         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,19 @@
 #include <string.h>
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	if (n == -2147483648)
-		write(fd, "-2147483648", 11);
-	else if (n < 0)
+	t_list	*i;
+
+	if (!*lst)
 	{
-		write(fd, "-", 1);
-		n = n * -1;
-		ft_putnbr_fd(n, fd);
+		*lst = new;
+		return ;
 	}
-	else if (n >= 0 && n <= 9)
+	i = *lst;
+	while (i->next)
 	{
-		ft_putchar_fd(n + 48, fd);
+		i = i->next;
 	}
-	else if (n > 9)
-	{
-		ft_putnbr_fd(n / 10, fd);
-		ft_putnbr_fd(n % 10, fd);
-	}	
+	i->next = new;
 }

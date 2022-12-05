@@ -6,7 +6,7 @@
 #    By: pmaia-li <pmaia-li@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/30 09:03:42 by pmaia-li          #+#    #+#              #
-#    Updated: 2022/12/05 15:38:10 by pmaia-li         ###   ########.fr        #
+#    Updated: 2022/12/05 16:44:39 by pmaia-li         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,11 @@ SRC = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 	ft_tolower.c ft_toupper.c ft_itoa.c ft_split.c
 
 OBJ = $(SRC:.c=.o)
+
+SRC_BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
+	ft_lstadd_back.c ft_lstdelone.c
+
+BONUS_OBJS = $(SRC_BONUS:.c=.o)
 
 all: $(NAME)
 
