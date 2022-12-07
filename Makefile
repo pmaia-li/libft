@@ -6,7 +6,7 @@
 #    By: pmaia-li <pmaia-li@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/30 09:03:42 by pmaia-li          #+#    #+#              #
-#    Updated: 2022/12/05 16:44:39 by pmaia-li         ###   ########.fr        #
+#    Updated: 2022/12/07 11:49:26 by pmaia-li         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ SRC = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 OBJ = $(SRC:.c=.o)
 
 SRC_BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
-	ft_lstadd_back.c ft_lstdelone.c
+	ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
 
 BONUS_OBJS = $(SRC_BONUS:.c=.o)
 
@@ -48,5 +48,5 @@ fclean: clean
 re: fclean all
 
 so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
-	gcc -nostartfiles -shared -o libft.so $(OBJ)
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC) $(SRC_BONUS)
+	gcc -nostartfiles -shared -o libft.so $(OBJ) $(BONUS_OBJS)

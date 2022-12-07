@@ -6,7 +6,7 @@
 /*   By: pmaia-li <pmaia-li@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 16:21:53 by pmaia-li          #+#    #+#             */
-/*   Updated: 2022/12/05 16:35:05 by pmaia-li         ###   ########.fr       */
+/*   Updated: 2022/12/07 11:44:36 by pmaia-li         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 #include <string.h>
 #include "libft.h"
 
-char	*ft_r_space(char *str)
+const char	*ft_r_space(const char *str)
 {
 	while (*str == 32 || (*str >= 9 && *str <= 13))
 		str++;
 	return (str);
 }
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	int	cont;
 	int	a;

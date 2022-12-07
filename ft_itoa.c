@@ -6,7 +6,7 @@
 /*   By: pmaia-li <pmaia-li@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 10:32:57 by pmaia-li          #+#    #+#             */
-/*   Updated: 2022/12/05 15:09:47 by pmaia-li         ###   ########.fr       */
+/*   Updated: 2022/12/07 14:12:01 by pmaia-li         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,15 +40,13 @@ char	*ft_itoa(int n)
 	long int	nb;
 
 	nb = n;
+	if (nb == 0)
+		return (ft_strdup("0"));
 	i = ft_digit_count(nb);
-	if (!(str = malloc(i * sizeof(char) + 1)))
+	str = malloc(i * sizeof(char) + 1);
+	if (!str)
 		return (0);
 	str[i--] = 0;
-	if (nb == 0)
-	{
-		str = ft_calloc(2, sizeof(char));
-		str[0] = 48;
-	}
 	if (nb < 0)
 	{
 		str[0] = '-';

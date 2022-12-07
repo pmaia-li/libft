@@ -6,7 +6,7 @@
 /*   By: pmaia-li <pmaia-li@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 13:55:49 by pmaia-li          #+#    #+#             */
-/*   Updated: 2022/12/05 12:36:48 by pmaia-li         ###   ########.fr       */
+/*   Updated: 2022/12/07 12:17:27 by pmaia-li         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,23 @@
 
 char	*ft_strrchr(const char *str, int c)
 {
-	char	*temp_str;
+	size_t	i;
 
-	temp_str = (char *)str + ft_strlen((char *)str);
-	while (*temp_str != c)
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	while (i > 0)
 	{
-		if (temp_str == str)
-			return (NULL);
-		temp_str--;
+		if (str[i] == (char)c)
+		{
+			return ((char *)&str[i]);
+		}
+		i--;
 	}
-	return (temp_str);
+	if (i == 0)
+	{
+		if (str[i] == (char)c)
+			return ((char *)&str[i]);
+	}
+	return (NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: pmaia-li <pmaia-li@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 09:19:24 by pmaia-li          #+#    #+#             */
-/*   Updated: 2022/12/05 13:48:42 by pmaia-li         ###   ########.fr       */
+/*   Updated: 2022/12/07 11:44:29 by pmaia-li         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 /*Part 1*/
-int		ft_atoi(char *str);
+int		ft_atoi(const char *str);
 void	*ft_bzero(void *str, size_t n);
 void	*ft_calloc(size_t nitems, size_t size);
 int		ft_isalnum(int a);
